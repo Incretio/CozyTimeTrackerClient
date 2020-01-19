@@ -1,0 +1,9 @@
+<div
+  class="header_tag-element"
+  [ngClass]="{'active': active}"
+>{{tag.name}}</div>
+<ng-container *ngIf="!lastTag">
+  <div class="header_tag-delimiter"></div>
+</ng-container>
+
+

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable, Subject} from "rxjs";
+import {MainService} from "./services/main.service";
+import { Task } from './models/Task';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cozy-time-tracker-client';
+  constructor(private mainService: MainService) {
+  }
+
+  private getTasksList(): Task[] {
+    return this.mainService.tasksList;
+  }
+
+
 }

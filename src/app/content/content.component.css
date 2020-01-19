@@ -1,0 +1,82 @@
+.task-block {
+  position: relative;
+  height: 43px;
+  background: #CEF0D2;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 7px 7px 0 0;
+  margin: 0 20px 10px;
+}
+
+.task-block:hover {
+  cursor: pointer;
+  box-shadow: 0 0 8px 1px white;
+  filter: invert(.1);
+  background-color: rgba(255, 255, 255, 0.58);
+  transition: filter .3s;
+}
+
+.number {
+  position: absolute;
+  font-weight: bold;
+  left: 9px;
+  top: 6px;
+  color: black;
+}
+
+.name {
+  position: absolute;
+  left: 138px;
+  top: 6px;
+}
+
+.time-left {
+  position: absolute;
+  right: 159px;
+  top: 6px;
+}
+
+.content_task-time-delimiter {
+  position: absolute;
+  width: 7px;
+  height: 15px;
+  right: 142px;
+  top: 6px;
+}
+
+.time-limit {
+  position: absolute;
+  width: 79px;
+  height: 15px;
+  right: 53px;
+  top: 6px;
+}
+
+.content_task-button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 11px;
+  top: 6px;
+}
+
+.content_task-progressbar-all {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8px;
+  background: #FFFFFF;
+  border-top: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.content_task-progressbar-current {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7px;
+  background: #1EA143;
+}

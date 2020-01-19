@@ -1,0 +1,9 @@
+<div class="header_tag-block">
+  <app-tag
+    *ngFor="let tag of getTagsList(); let idx = index"
+    [tag]="tag"
+    [active]="tag.name === getActiveTag().name"
+    [lastTag]="idx === getTagsList().length - 1"
+    (click)="changeTag(tag)"
+  ></app-tag>
+</div>
