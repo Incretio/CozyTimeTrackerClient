@@ -18,4 +18,8 @@ export class RemoteService {
   public getTasksByTag(tag: Tag): Observable<Task[]> {
     return this.httpClient.get<Task[]>(`/api/v.1/task/bytag/${tag.id}`);
   }
+
+  public toggleTask(task: Task, currentTag: Tag): Observable<Task[]> {
+    return this.httpClient.post<Task[]>(`/api/v.1/task/toggle/${task.id}/tag/${currentTag.id}`, {});
+  }
 }

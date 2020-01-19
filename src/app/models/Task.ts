@@ -1,4 +1,5 @@
 import {Tag} from "./Tag";
+import {TaskStatusType} from "./TaskStatusType";
 
 export class Task {
   id: number;
@@ -6,9 +7,10 @@ export class Task {
   name: string;
   description: string;
   tagsList: Tag;
-  status: string;
+  status: TaskStatusType;
   progress: number;
   timeLeftToday?: string;
   timeLeftAll?: string;
   timeLimit?: string;
+  show?: boolean;
 }

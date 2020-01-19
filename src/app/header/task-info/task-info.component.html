@@ -1,2 +1,16 @@
-<app-description></app-description>
-<app-time></app-time>
+<ng-container *ngIf="getTask()">
+  <div class="header_task-caption">
+    <span class="header_task-number task-number">{{getTask().number}}</span>
+    <span class="header_task-name">{{getTask().name}}</span>
+    <textarea class="header_task-time-description" >{{getTask().description}}</textarea>
+  </div>
+
+  <div class="header_task-time-block">
+    <span class="header_task-time-left-today">{{getTask().timeLeftToday}}</span>
+    <span class="header_task-time-delimiter-1 time-delimiter"></span>
+    <span class="header_task-time-left-all">{{getTask().timeLeftAll}}</span>
+    <span class="header_task-time-delimiter-2 time-delimiter"></span>
+    <span class="header_task-time-limit">{{getTask().timeLimit}}</span>
+    <button class="header_task-button task_button pointer-element"></button>
+  </div>
+</ng-container>

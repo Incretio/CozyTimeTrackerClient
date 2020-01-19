@@ -1,9 +1,17 @@
-<div id={index} class="task-block">
+<div *ngIf="isShow()" class="task-block">
   <span class="number task-number">{{task.number}}</span>
   <span class="name">{{task.name}}</span>
   <span class="time-left">{{task.timeLeftAll}}</span>
   <span class="content_task-time-delimiter time-delimiter"></span>
   <span class="time-limit">{{task.timeLimit}}</span>
-  <button class="content_task-button task_button pointer-element"></button>
-
+  <button
+    class="content_task-button task_button pointer-element"
+    [class.started]="isRun()"
+    (click)="onClickStart()"
+  ></button>
+  <mat-progress-bar
+    class="content_task-progressbar-current"
+    [value]="task.progress"
+    [color]="task.progress > 80 ? 'warn' : null"
+  ></mat-progress-bar>
 </div>
