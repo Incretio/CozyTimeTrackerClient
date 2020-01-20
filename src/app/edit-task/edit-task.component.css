@@ -1,0 +1,152 @@
+/* TASK ABOUT */
+.task-about-block {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  bottom: -250px;
+  bottom: -404px;
+  right: -65px;
+  width: 1023px;
+  height: 903px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 3px solid #000000;
+  box-sizing: border-box;
+  box-shadow: -10px -10px 25px rgba(0, 0, 0, 0.51);
+  border-radius: 20px 0 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.01em;
+}
+
+.task-about-block.show {
+  display: block;
+}
+
+.task-about_okey-button {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 33px;
+  width: 33px;
+  background: url(/assets/img/okey.svg) no-repeat;
+}
+
+.task-about_number {
+  position: absolute;
+  left: 55px;
+  top: 3px;
+  width: 162px;
+  height: 34px;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 25px;
+  text-align: center;
+}
+
+.task-about_name {
+  position: absolute;
+  left: 230px;
+  top: 3px;
+  width: 715px;
+  height: 34px;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #000000;
+  font-size: 25px;
+  padding-left: 5px;
+}
+
+.task-about_tags_list {
+  position: absolute;
+  left: 55px;
+  top: 87px;
+  width: 162px;
+  height: 353px;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.task-about_tag-element {
+  width: 81%;
+  position: relative;
+  margin-left: 5px;
+  padding-left: 20px;
+  display: block;
+}
+
+.task-about_tag-element:first-child {
+  margin-top: 8px;
+}
+
+.task-about_tag-element.enabled::before {
+  position: absolute;
+  left: 0;
+  content: "# ";
+  margin-left: 4px;
+}
+
+.task-about_tag-element:hover {
+  cursor: pointer;
+  box-shadow: 0 0 8px 1px white;
+  filter: invert(.8);
+  background-color: rgba(255, 255, 255, 0.58);
+}
+
+.task-about_time-description {
+  position: absolute;
+  left: 428px;
+  top: 87px;
+  width: 515px;
+  height: 353px;
+  resize: none;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 5px;
+}
+
+.task-about_time-left {
+  position: absolute;
+  left: 230px;
+  top: 64px;
+  color: #FFFFFF;
+}
+
+.task-about_time-delimiter {
+  position: absolute;
+  left: 313px;
+  top: 64px;
+  color: #FFFFFF;
+}
+
+.task-about_time-limit {
+  position: absolute;
+  left: 328px;
+  top: 64px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.task-about_time-left-by-day {
+  position: absolute;
+  left: 230px;
+  top: 87px;
+  width: 187px;
+  height: 353px;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}

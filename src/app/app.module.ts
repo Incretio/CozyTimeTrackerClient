@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {FormsModule} from "@angular/forms";
+import { TaskTagsComponent } from './edit-task/task-tags/task-tags.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {FormsModule} from "@angular/forms";
     WorkDayTimeComponent,
     TagsComponent,
     SearchComponent,
-    TagComponent
+    TagComponent,
+    TaskTagsComponent
   ],
   imports: [
     BrowserModule,

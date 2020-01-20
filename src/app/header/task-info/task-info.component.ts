@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {MainService} from "../../services/main.service";
+import {SharedDataService} from "../../services/shared-data-service";
 
 @Component({
   selector: 'app-task-info',
   templateUrl: './task-info.component.html',
   styleUrls: ['./task-info.component.css']
 })
-export class TaskInfoComponent implements OnInit {
+export class TaskInfoComponent {
 
-  constructor(private mainService: MainService) { }
-
-  ngOnInit() {
-  }
+  constructor(private sharedDataService: SharedDataService) { }
 
   getTask() {
-    return this.mainService.activeTask;
+    return this.sharedDataService.activeTask;
   }
 
 }

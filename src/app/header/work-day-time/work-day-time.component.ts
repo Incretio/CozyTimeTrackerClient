@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './work-day-time.component.html',
   styleUrls: ['./work-day-time.component.css']
 })
-export class WorkDayTimeComponent implements OnInit {
+export class WorkDayTimeComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

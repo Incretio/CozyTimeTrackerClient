@@ -1,4 +1,5 @@
-<div *ngIf="isShow()" class="task-block">
+<div *ngIf="isShow()" class="task-block"
+  (click)="onClickTask()">
   <span class="number task-number">{{task.number}}</span>
   <span class="name">{{task.name}}</span>
   <span class="time-left">{{task.timeLeftAll}}</span>

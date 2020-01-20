@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MainService} from "../../services/main.service";
 import {Tag} from "../../models/Tag";
+import {SharedDataService} from "../../services/shared-data-service";
 
 @Component({
   selector: 'app-tags',
@@ -9,17 +10,17 @@ import {Tag} from "../../models/Tag";
 })
 export class TagsComponent {
 
-  constructor(private mainService: MainService) { }
+  constructor(private mainService: MainService, private sharedDataService: SharedDataService) { }
 
   changeTag(tag: Tag) {
-    this.mainService.setActiveTag(tag);
+    this.sharedDataService.setActiveTag(tag);
   }
 
   getActiveTag(): Tag {
-    return this.mainService.activeTag;
+    return this.sharedDataService.activeTag;
   }
 
   getTagsList(): Tag[] {
-    return this.mainService.tagsList;
+    return this.sharedDataService.tagsList;
   }
 }

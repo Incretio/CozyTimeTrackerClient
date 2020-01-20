@@ -1,1 +1,21 @@
-<p>edit-task works!</p>
+<div *ngIf="sharedDataService.editTask" class="task-about-block show">
+  <button class="task-about_okey-button pointer-element" (click)={}></button>
+  <input class="task-about_number"
+    [value]="this.sharedDataService.editTask.number"
+    (change)={}
+    (blur)={}>
+  <input class="task-about_name"
+    [value]="this.sharedDataService.editTask.name"
+    (change)={}
+    (blur)={}>
+  <span class="task-about_time-left">{{this.sharedDataService.editTask.timeLeftAll}}</span>
+  <span class="task-about_time-delimiter time-delimiter"></span>
+  <span class="task-about_time-limit">{{this.sharedDataService.editTask.timeLimit}}</span>
+<!--  <app-task-tags-->
+<!--    editTask={this.props.editTask}-->
+<!--    tagsList={this.props.tagsList}-->
+<!--    toggleTag={this.props.toggleTag}>-->
+<!--  </app-task-tags>-->
+  <span class="task-about_time-left-by-day"></span>
+  <textarea class="task-about_time-description"></textarea>
+</div>

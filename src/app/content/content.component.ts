@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Task} from '../models/Task';
 import {MainService} from "../services/main.service";
 import {TaskStatusType} from "../models/TaskStatusType";
+import {SharedDataService} from "../services/shared-data-service";
 
 @Component({
   selector: 'app-content',
@@ -12,10 +13,10 @@ export class ContentComponent {
 
   @Input() task: Task;
 
-  constructor(private mainService: MainService) { }
+  constructor(private mainService: MainService, private sharedDataService: SharedDataService) { }
 
   private onClickStart() {
-    this.mainService.setActiveTask(this.task);
+    this.sharedDataService.setActiveTask(this.task);
   }
 
   private isRun(): boolean {
@@ -23,7 +24,11 @@ export class ContentComponent {
   }
 
   private isShow(): boolean {
-    // return this.task.show !== false;
     return this.mainService.isShow(this.task);
+  }
+
+  onClickTask() {
+    this.sharedDataService.editTask = this.task;
+    console.log(this.sharedDataService.editTask);
   }
 }
