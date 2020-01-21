@@ -6,7 +6,7 @@ export class Task {
   number: string;
   name: string;
   description: string;
-  tagsList: Tag;
+  tagsList: string[];
   status: TaskStatusType;
   progress: number;
   timeLeftToday?: string;

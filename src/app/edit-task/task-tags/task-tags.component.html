@@ -1,1 +1,7 @@
-<p>task-tags works!</p>
+<span
+  *ngIf="tag.id!=0"
+  class="task-about_tag-element pointer-element"
+  [class.enabled]="isEnabled()"
+  (click)={}>
+    {{tag.name}}
+</span>

@@ -77,32 +77,6 @@
   border-radius: 4px;
 }
 
-.task-about_tag-element {
-  width: 81%;
-  position: relative;
-  margin-left: 5px;
-  padding-left: 20px;
-  display: block;
-}
-
-.task-about_tag-element:first-child {
-  margin-top: 8px;
-}
-
-.task-about_tag-element.enabled::before {
-  position: absolute;
-  left: 0;
-  content: "# ";
-  margin-left: 4px;
-}
-
-.task-about_tag-element:hover {
-  cursor: pointer;
-  box-shadow: 0 0 8px 1px white;
-  filter: invert(.8);
-  background-color: rgba(255, 255, 255, 0.58);
-}
-
 .task-about_time-description {
   position: absolute;
   left: 428px;

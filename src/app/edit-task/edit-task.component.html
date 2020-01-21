@@ -11,11 +11,11 @@
   <span class="task-about_time-left">{{this.sharedDataService.editTask.timeLeftAll}}</span>
   <span class="task-about_time-delimiter time-delimiter"></span>
   <span class="task-about_time-limit">{{this.sharedDataService.editTask.timeLimit}}</span>
-<!--  <app-task-tags-->
-<!--    editTask={this.props.editTask}-->
-<!--    tagsList={this.props.tagsList}-->
-<!--    toggleTag={this.props.toggleTag}>-->
-<!--  </app-task-tags>-->
+  <span class="task-about_tags_list">
+  <app-task-tags *ngFor="let tag of sharedDataService.tagsList"
+    [tag]="tag">
+  </app-task-tags>
+  </span>
   <span class="task-about_time-left-by-day"></span>
   <textarea class="task-about_time-description"></textarea>
 </div>
