@@ -13,5 +13,7 @@ export class EditTaskComponent {
   constructor(private mainService: MainService, private sharedDataService: SharedDataService) {  }
 
 
-
+  onOkClick() {
+    this.sharedDataService.editTask = null;
+  }
 }

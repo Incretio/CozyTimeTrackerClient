@@ -1,5 +1,5 @@
 <div *ngIf="sharedDataService.editTask" class="task-about-block show">
-  <button class="task-about_okey-button pointer-element" (click)={}></button>
+  <button class="task-about_okey-button pointer-element" (click)="onOkClick()"></button>
   <input class="task-about_number"
     [value]="this.sharedDataService.editTask.number"
     (change)={}
