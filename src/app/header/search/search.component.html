@@ -2,6 +2,6 @@
   class="header_search-block"
   [(ngModel)]="searchText"
   [placeholder]="'Введите номер задачи...'"
-  (keyup)="onSearchChanged()"
+  (input)="onSearchChanged()"
   (keydown.enter)="onEnter()"
 >
