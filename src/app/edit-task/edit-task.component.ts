@@ -16,4 +16,9 @@ export class EditTaskComponent {
   onOkClick() {
     this.sharedDataService.editTask = null;
   }
+
+  onTaskChanged() {
+    this.mainService.updateEditTask(this.sharedDataService.editTask);
+  }
+
 }

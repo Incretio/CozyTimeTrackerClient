@@ -34,8 +34,15 @@ export class RemoteService {
   public addNewTask(taskName: string, tagId: string): Observable<Task[]>  {
     return this.httpClient.post<Task[]>(
       '/api/v.1/task/new',
-      stringify({taskName, tagId}),
+      JSON.stringify({taskName, tagId}),
       {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
       )
+  }
+
+  public updateTask(task: Task): Observable<Task> {
+    return this.httpClient.post<Task>(
+      `/api/v.1/task/update/${task.id}`,
+      task
+    )
   }
 }

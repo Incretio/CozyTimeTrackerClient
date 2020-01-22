@@ -57,4 +57,15 @@ export class MainService {
       });
   }
 
+  public updateEditTask(task: Task) {
+    this.remoteService.updateTask(task)
+      .subscribe(task => {
+        for (let i = 0; i < this.sharedDataService.tasksList.length; i++) {
+          if (this.sharedDataService.tasksList[i].id === task.id) {
+            this.sharedDataService.tasksList[i] = task;
+          }
+        }
+      })
+  }
+
 }

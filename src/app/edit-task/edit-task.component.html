@@ -1,12 +1,12 @@
 <div *ngIf="sharedDataService.editTask" class="task-about-block show">
   <button class="task-about_okey-button pointer-element" (click)="onOkClick()"></button>
   <input class="task-about_number"
-    [value]="this.sharedDataService.editTask.number"
-    (change)={}
+    [(ngModel)]="this.sharedDataService.editTask.number"
+    (input)="onTaskChanged()"
     (blur)={}>
   <input class="task-about_name"
-    [value]="this.sharedDataService.editTask.name"
-    (change)={}
+    [(ngModel)]="this.sharedDataService.editTask.name"
+    (input)="onTaskChanged()"
     (blur)={}>
   <span class="task-about_time-left">{{this.sharedDataService.editTask.timeLeftAll}}</span>
   <span class="task-about_time-delimiter time-delimiter"></span>
