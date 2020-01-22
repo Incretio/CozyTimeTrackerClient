@@ -8,7 +8,15 @@
   margin: 0 20px 10px;
 }
 
-.task-block:hover {
+.task-block-clickable {
+  height: 100%;
+  background: #CEF0D2;
+  opacity: 1;
+  box-sizing: border-box;
+  border-radius: 7px 7px 0 0;
+}
+
+.task-block-clickable:hover {
   cursor: pointer;
   box-shadow: 0 0 8px 1px white;
   filter: invert(.1);
