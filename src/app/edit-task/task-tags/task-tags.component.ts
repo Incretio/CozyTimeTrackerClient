@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Tag} from "../../models/Tag";
 import {SharedDataService} from "../../services/shared-data-service";
+import {MainService} from "../../services/main.service";
 
 @Component({
   selector: 'app-task-tags',
@@ -11,16 +12,22 @@ export class TaskTagsComponent implements OnInit {
 
   @Input() tag: Tag;
 
-  constructor(private sharedDataService: SharedDataService) {}
+  constructor(private mainService: MainService, private sharedDataService: SharedDataService) {}
 
   ngOnInit() {
   }
 
   isEnabled() {
-    if (this.tag.id === "0" || this.sharedDataService.editTask.tagsList.includes(this.tag.id)){
+    if (this.mainService.isTaskShowsForTag(this.sharedDataService.editTask, this.tag)){
       return "enabled";
     } else {
       return "";
     }
   }
+
+  onTagClick() {
+    console.log(this.tag);
+    this.mainService.toggleTag(this.tag);
+  }
+
 }

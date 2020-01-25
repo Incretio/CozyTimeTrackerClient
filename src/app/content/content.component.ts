@@ -24,7 +24,7 @@ export class ContentComponent {
   }
 
   private isShow(): boolean {
-    return this.mainService.isShow(this.task);
+    return this.mainService.isTaskShow(this.task);
   }
 
   onClickTask() {

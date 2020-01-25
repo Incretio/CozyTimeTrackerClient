@@ -2,6 +2,6 @@
   *ngIf="tag.id!=0"
   class="task-about_tag-element pointer-element"
   [class.enabled]="isEnabled()"
-  (click)={}>
+  (click)="onTagClick()">
     {{tag.name}}
 </span>

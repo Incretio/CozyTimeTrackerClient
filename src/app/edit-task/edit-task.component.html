@@ -2,19 +2,17 @@
   <button class="task-about_okey-button pointer-element" (click)="onOkClick()"></button>
   <input class="task-about_number"
     [(ngModel)]="this.sharedDataService.editTask.number"
-    (input)="onTaskChanged()"
-    (blur)={}>
+    (input)="onTaskChanged()">
   <input class="task-about_name"
     [(ngModel)]="this.sharedDataService.editTask.name"
-    (input)="onTaskChanged()"
-    (blur)={}>
+    (input)="onTaskChanged()">
   <span class="task-about_time-left">{{this.sharedDataService.editTask.timeLeftAll}}</span>
   <span class="task-about_time-delimiter time-delimiter"></span>
   <span class="task-about_time-limit">{{this.sharedDataService.editTask.timeLimit}}</span>
   <span class="task-about_tags_list">
-  <app-task-tags *ngFor="let tag of sharedDataService.tagsList"
-    [tag]="tag">
-  </app-task-tags>
+    <app-task-tags *ngFor="let tag of sharedDataService.tagsList"
+      [tag]="tag">
+    </app-task-tags>
   </span>
   <span class="task-about_time-left-by-day"></span>
   <textarea class="task-about_time-description"></textarea>

@@ -35,7 +35,10 @@ export class MainService {
       )
   }
 
-  public isShow(task: Task) {
+  public isTaskShow(task: Task) {
+    if (!this.isTaskShowsForTag(task, this.sharedDataService.activeTag)) {
+      return false;
+    }
     if (!this.sharedDataService.searchPattern){
       return true;
     }
@@ -66,6 +69,24 @@ export class MainService {
           }
         }
       })
+  }
+
+  public toggleTag(tag: Tag) {
+    this.toggleArrayElement(this.sharedDataService.editTask.tagsList, tag.id);
+    this.updateEditTask(this.sharedDataService.editTask);
+  }
+
+  private toggleArrayElement(array, value) {
+    var index = array.indexOf(value);
+    if (index === -1) {
+      array.push(value);
+    } else {
+      array.splice(index, 1);
+    }
+  }
+
+  public isTaskShowsForTag(task: Task, tag: Tag): boolean {
+    return tag.id == "0" || task.tagsList.includes(tag.id);
   }
 
 }
