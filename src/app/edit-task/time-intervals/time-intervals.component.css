@@ -1,0 +1,40 @@
+.task-about_time-intervals {
+  position: absolute;
+  left: 428px;
+  top: 87px;
+  width: 515px;
+  height: 353px;
+  resize: none;
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 3px;
+}
+
+.time-header {
+  position: relative;
+}
+
+.total-time {
+  position: absolute;
+  right: 20px;
+}
+
+.time-interval {
+  position: absolute;
+  left: 20px;
+}
+
+.message {
+  padding-top: 30px;
+}
+
+.task-about_time-intervals-scroll {
+  height: 99.4%;
+  width: 100%;
+}
+
+.task-about_time-interval-element {
+  border-bottom: 1px solid #00A110;
+}

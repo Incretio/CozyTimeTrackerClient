@@ -15,6 +15,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {FormsModule} from "@angular/forms";
 import { TaskTagsComponent } from './edit-task/task-tags/task-tags.component';
+import { TimeIntervalsComponent } from './edit-task/time-intervals/time-intervals.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { TaskTagsComponent } from './edit-task/task-tags/task-tags.component';
     TagsComponent,
     SearchComponent,
     TagComponent,
-    TaskTagsComponent
+    TaskTagsComponent,
+    TimeIntervalsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
     MatProgressBarModule,
+    ScrollingModule,
     FormsModule
   ],
   providers: [],

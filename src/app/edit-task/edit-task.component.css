@@ -77,20 +77,6 @@
   border-radius: 4px;
 }
 
-.task-about_time-description {
-  position: absolute;
-  left: 428px;
-  top: 87px;
-  width: 515px;
-  height: 353px;
-  resize: none;
-  background: #FFFFFF;
-  border: 2px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 0 5px;
-}
-
 .task-about_time-left {
   position: absolute;
   left: 230px;
