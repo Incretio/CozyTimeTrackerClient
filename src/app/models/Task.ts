@@ -1,5 +1,5 @@
-import {Tag} from "./Tag";
 import {TaskStatusType} from "./TaskStatusType";
+import {TimeInterval} from "./TimeInterval";
 
 export class Task {
   id: number;
@@ -12,5 +12,5 @@ export class Task {
   timeLeftToday?: string;
   timeLeftAll?: string;
   timeLimit?: string;
-  show?: boolean;
+  timeIntervalList: TimeInterval[];
 }

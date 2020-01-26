@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedDataService} from "../../services/shared-data-service";
 
 @Component({
   selector: 'app-time-intervals',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimeIntervalsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
 
   ngOnInit() {
   }
