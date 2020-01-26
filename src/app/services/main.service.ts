@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Tag} from "../models/Tag";
-import {Subject} from "rxjs";
-import { Task } from '../models/Task';
+import {Task} from '../models/Task';
 import {RemoteService} from "./remote.service";
 import {SharedDataService} from "./shared-data-service";
+import {TaskStatusType} from "../models/TaskStatusType";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,18 @@ export class MainService {
     this.sharedDataService.activeTagChanged.subscribe(activeTag => this.refreshTasksListByTag(activeTag));
     this.sharedDataService.activeTaskChanged.subscribe(task => this.toggleTask(task));
     this.refreshTagsList();
+    this.refreshActiveTask();
+    setInterval(() => this.autoUpdateEditTask(), 1000);
+    setInterval(() => this.autoUpdateActiveTask(), 1000);
+  }
+
+  public refreshActiveTask() {
+    for (let i = 0; i < this.sharedDataService.tasksList.length; i++) {
+      let task: Task = this.sharedDataService.tasksList[i];
+      if (task.status === TaskStatusType.STARTED) {
+        this.sharedDataService.activeTask = task;
+      }
+    }
   }
 
   public refreshTagsList() {
@@ -31,6 +43,7 @@ export class MainService {
     this.remoteService.getTasksByTag(tag)
       .subscribe(tasks => {
           this.sharedDataService.tasksList = tasks;
+          this.refreshActiveTask();
         }
       )
   }
@@ -87,6 +100,31 @@ export class MainService {
 
   public isTaskShowsForTag(task: Task, tag: Tag): boolean {
     return tag.id == "0" || task.tagsList.includes(tag.id);
+  }
+
+  private autoUpdateEditTask() {
+    if (!this.sharedDataService.editTask) {
+      return;
+    }
+    this.remoteService.getTasksById(this.sharedDataService.editTask)
+      .subscribe((task) => {
+        this.sharedDataService.editTask = task;
+      });
+  }
+
+  private autoUpdateActiveTask() {
+    if (!this.sharedDataService.activeTask) {
+      return;
+    }
+    this.remoteService.getTasksById(this.sharedDataService.activeTask)
+      .subscribe((task) => {
+        this.sharedDataService.activeTask = task;
+        for (let i = 0; i < this.sharedDataService.tasksList.length; i++) {
+          if (this.sharedDataService.tasksList[i].id === task.id) {
+            this.sharedDataService.tasksList[i] = task;
+          }
+        }
+      });
   }
 
 }
