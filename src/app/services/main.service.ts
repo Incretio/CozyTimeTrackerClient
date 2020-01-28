@@ -16,6 +16,7 @@ export class MainService {
     this.refreshActiveTask();
     setInterval(() => this.autoUpdateEditTask(), 1000);
     setInterval(() => this.autoUpdateActiveTask(), 1000);
+    setInterval(() => this.refreshWorkedToday(), 1000);
   }
 
   public refreshActiveTask() {
@@ -133,6 +134,13 @@ export class MainService {
         return this.sharedDataService.tasksList[i];
       }
     }
+  }
+
+  public refreshWorkedToday(): void {
+    this.remoteService.workedToday()
+      .subscribe((workedToday) => {
+        this.sharedDataService.workedToday = workedToday
+      });
   }
 
 }

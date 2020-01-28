@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {SharedDataService} from "../../services/shared-data-service";
+import {TaskStatusType} from "../../models/TaskStatusType";
 
 @Component({
   selector: 'app-work-day-time',
@@ -7,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkDayTimeComponent {
 
-  constructor() { }
+  constructor(private sharedDataService: SharedDataService) { }
+
+  private isActive(): boolean {
+    return this.sharedDataService.activeTask && this.sharedDataService.activeTask.status === TaskStatusType.STARTED;
+  }
 
 }

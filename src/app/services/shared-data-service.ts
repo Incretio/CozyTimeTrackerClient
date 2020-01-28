@@ -13,6 +13,7 @@ export class SharedDataService {
   public tasksList: Task[] = [];
   public activeTask: Task;
   public editTask: Task;
+  public workedToday: string;
 
   public activeTagChanged: Subject<Tag> = new Subject();
   public searchPatternChanged: Subject<string> = new Subject();

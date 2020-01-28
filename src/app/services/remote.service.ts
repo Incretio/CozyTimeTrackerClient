@@ -51,4 +51,11 @@ export class RemoteService {
       task
     )
   }
+
+  public workedToday(): Observable<String> {
+    return this.httpClient.get(
+      '/api/v.1/timeinterval/workedtoday',
+      {responseType: 'text'}
+    )
+  }
 }
