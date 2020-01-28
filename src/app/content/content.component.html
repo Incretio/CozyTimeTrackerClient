@@ -16,9 +16,8 @@
     [value]="task.progress"
     [color]="task.progress > 80 ? 'warn' : null"
   ></mat-progress-bar>
-  <button
-    class="content_task-button task_button pointer-element"
-    [class.started]="isRun()"
-    (click)="onClickStart()"
-  ></button>
+  <app-start-task-button
+    class="content_task-button"
+    [task]="task"
+  ></app-start-task-button>
 </div>

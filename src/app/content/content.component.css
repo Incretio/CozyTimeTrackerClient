@@ -60,14 +60,6 @@
   top: 6px;
 }
 
-.content_task-button {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  right: 11px;
-  top: 6px;
-}
-
 .content_task-progressbar-all {
   position: absolute;
   left: 0;
@@ -87,4 +79,10 @@
   bottom: 0;
   height: 7px;
   background: #1EA143;
+}
+
+.content_task-button {
+  position: absolute;
+  right: 11px;
+  top: 6px;
 }

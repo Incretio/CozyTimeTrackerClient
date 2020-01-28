@@ -15,20 +15,11 @@ export class ContentComponent {
 
   constructor(private mainService: MainService, private sharedDataService: SharedDataService) { }
 
-  private onClickStart() {
-    this.sharedDataService.setActiveTask(this.task);
-  }
-
-  private isRun(): boolean {
-    return this.task.status === TaskStatusType.STARTED;
-  }
-
   private isShow(): boolean {
     return this.mainService.isTaskShow(this.task);
   }
 
   onClickTask() {
     this.sharedDataService.editTask = this.task;
-    console.log(this.sharedDataService.editTask);
   }
 }

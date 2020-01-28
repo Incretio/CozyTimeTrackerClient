@@ -1,0 +1,18 @@
+.header_task-button {
+  position: absolute;
+  right: 0;
+}
+
+.header_task-time-delimiter-1 {
+  position: absolute;
+  left: 26%;
+  top: 4.17%;
+  bottom: 0;
+}
+
+.header_task-time-delimiter-2 {
+  position: absolute;
+  right: 41%;
+  top: 4.17%;
+  bottom: 0;
+}

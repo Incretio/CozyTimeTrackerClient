@@ -15,7 +15,6 @@ export class SharedDataService {
   public editTask: Task;
 
   public activeTagChanged: Subject<Tag> = new Subject();
-  public activeTaskChanged: Subject<Task> = new Subject();
   public searchPatternChanged: Subject<string> = new Subject();
 
   public setActiveTag(tag: Tag): void {
@@ -25,7 +24,6 @@ export class SharedDataService {
 
   public setActiveTask(task: Task) {
     this.activeTask = task;
-    this.activeTaskChanged.next(this.activeTask);
   }
 
   public setSearchPattern(searchPattern: string): void {

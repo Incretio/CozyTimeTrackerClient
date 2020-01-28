@@ -11,6 +11,9 @@
     <span class="header_task-time-left-all">{{getTask().timeLeftAll}}</span>
     <span class="header_task-time-delimiter-2 time-delimiter"></span>
     <span class="header_task-time-limit">{{getTask().timeLimit}}</span>
-    <button class="header_task-button task_button pointer-element"></button>
+    <app-start-task-button
+      class="header_task-button"
+      [task]="getTask()"
+    ></app-start-task-button>
   </div>
 </ng-container>

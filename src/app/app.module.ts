@@ -17,6 +17,7 @@ import {FormsModule} from "@angular/forms";
 import { TaskTagsComponent } from './edit-task/task-tags/task-tags.component';
 import { TimeIntervalsComponent } from './edit-task/time-intervals/time-intervals.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { StartTaskButtonComponent } from './start-task-button/start-task-button.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     SearchComponent,
     TagComponent,
     TaskTagsComponent,
-    TimeIntervalsComponent
+    TimeIntervalsComponent,
+    StartTaskButtonComponent
   ],
   imports: [
     BrowserModule,

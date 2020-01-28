@@ -1,0 +1,9 @@
+.task_button {
+  height: 24px;
+  width: 24px;
+  background: url(assets/img/button_start.svg) no-repeat;
+}
+
+.task_button.started {
+  background: url(assets/img/button_stop.svg) no-repeat;
+}

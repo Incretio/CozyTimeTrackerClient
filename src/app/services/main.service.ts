@@ -12,7 +12,6 @@ export class MainService {
 
   constructor(private remoteService: RemoteService, private sharedDataService: SharedDataService) {
     this.sharedDataService.activeTagChanged.subscribe(activeTag => this.refreshTasksListByTag(activeTag));
-    this.sharedDataService.activeTaskChanged.subscribe(task => this.toggleTask(task));
     this.refreshTagsList();
     this.refreshActiveTask();
     setInterval(() => this.autoUpdateEditTask(), 1000);
@@ -63,6 +62,7 @@ export class MainService {
     this.remoteService.toggleTask(task, this.sharedDataService.activeTag)
       .subscribe(tasks => {
         this.sharedDataService.tasksList = tasks;
+        this.sharedDataService.activeTask = this.getTaskByIdFromTasksList(task);
       })
   }
 
@@ -125,6 +125,14 @@ export class MainService {
           }
         }
       });
+  }
+
+  private getTaskByIdFromTasksList(task: Task): Task {
+    for (let i = 0; i < this.sharedDataService.tasksList.length; i++) {
+      if (this.sharedDataService.tasksList[i].id === task.id) {
+        return this.sharedDataService.tasksList[i];
+      }
+    }
   }
 
 }
